@@ -3,7 +3,7 @@ import random
 def main():
     number = int((input("How many scores would you like to generate? ")))
 
-    for i in range(number):
+    for i in range(number): #iterates through the amount of scores asked to generate
         random_score = random.randrange(0, 100)
         result = score_calculator(random_score)
         write_file(random_score, result)
@@ -30,7 +30,7 @@ def score_calculator(score): #deciphers user's score and figures out result
 
 def write_file(random_scores, result):
     file=open('Scores and results.txt', 'a')
-    file.write("The score of {} is {}\n".format(random_scores, result))
+    file.write("The score of {} is {}\n".format(random_scores, result)) #writes result to new line
 
 main()
 
