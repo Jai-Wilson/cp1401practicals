@@ -10,9 +10,9 @@ print(COLOUR_CODE)
 user_code = input("What is the colour you would like the code of? ")
 while user_code != "":
     if user_code in COLOUR_CODE:
-        print(user_code, "is", COLOUR_CODE[user_code])
+        print(user_code, "is", COLOUR_CODE[user_code]) #print desired colour code
     else:
         print("Invalid input")
-    user_code = input("What is the colour you woudl like the code of?")
+    user_code = input("What is the colour you would like the code of?")
 
 
