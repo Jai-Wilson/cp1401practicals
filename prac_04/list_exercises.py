@@ -4,7 +4,7 @@
 numbers = []
 
 for i in range(5):
-    number = int(input("Number: "))
+    number = int(input("Number {}: ".format(i+1)))
     numbers.append(number) #add entered numbers to the list created
 
 print("The first number is {}".format(numbers[0]))
