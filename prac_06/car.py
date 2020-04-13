@@ -31,6 +31,7 @@ class Car:
         """
         if distance > self.fuel:
             distance = self.fuel
+            print('You travelled {}km before running out of fuel'.format(self.fuel))
             self.fuel = 0
         else:
             self.fuel -= distance

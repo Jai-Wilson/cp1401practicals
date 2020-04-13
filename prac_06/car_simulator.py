@@ -2,11 +2,39 @@
 
 from prac_06.car import Car
 
-print('Lets drive')
-car_name = input('What is the name of your car? ')
-my_car = Car(car_name, 100)
+MENU = 'Menu:\n d) Drive \n r) Refuel \n q) Quit'
 
-distance = int(input("How many km's do you want to drive? "))
-my_car.drive(distance)
-print(my_car)
 
+def main():
+    print('Lets drive')
+    car_name = input('What is the name of your car? ')
+    my_car = Car(car_name, 100)
+    print(my_car)
+    print(MENU)
+    user_choice = input('>>>').lower()
+    while user_choice != 'q':
+        if user_choice == 'd':
+            drive(my_car)
+        elif user_choice == 'r':
+            refuel(my_car)
+        else:
+            print('Invalid choice')
+        print(my_car)
+        print(MENU)
+        user_choice = input('>>>').lower()
+
+
+def refuel(my_car):
+    fuel_amount = int(input('How many units of fuel do you want to add to the car? '))
+    my_car.add_fuel(fuel_amount)
+
+
+def drive(my_car):
+    if my_car.fuel <= 0:
+        print('You have no fuel! Time to refuel')
+    else:
+        distance = int(input("How many km's do you want to drive? "))
+        my_car.drive(distance)
+
+
+main()
