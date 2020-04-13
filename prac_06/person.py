@@ -9,5 +9,4 @@ class Person:
 
 
     def __str__(self):
-        return '{} {}, {} years old'.format(self.first_name, self.last_name, self.age)
-    
+        return 'First name: {} Last name: {} Age: {}'.format(self.first_name, self.last_name, self.age)

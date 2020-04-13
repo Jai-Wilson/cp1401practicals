@@ -28,10 +28,9 @@ for i in range(no_of_people):
             print('Enter a valid number')
 
     new_person = Person(person_first_name, person_last_name, person_age)
-    print(new_person)
     people.append(new_person)
 
 people.sort(key=attrgetter('last_name'))
 print('People stored in database')
 for i in range(len(people)):
-    print('{:>10}, {:>10} - ({})'.format(people[i][0], people[i][1], people[i][2]))
+    print(people[i])

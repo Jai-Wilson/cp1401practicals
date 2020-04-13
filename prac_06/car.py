@@ -36,3 +36,7 @@ class Car:
             self.fuel -= distance
         self.odometer += distance
         return distance
+    def refuel(self, amount):
+
+        self.fuel +=amount
+        return self.fuel
