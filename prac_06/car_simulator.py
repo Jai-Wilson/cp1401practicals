@@ -5,6 +5,7 @@ from prac_06.car import Car
 MENU = 'Menu:\n d) Drive \n r) Refuel \n q) Quit'
 
 
+
 def main():
     print('Lets drive')
     car_name = input('What is the name of your car? ')
@@ -22,11 +23,20 @@ def main():
         print(my_car)
         print(MENU)
         user_choice = input('>>>').lower()
+    print("Goodbye {}'s driver".format(my_car.name))
 
 
 def refuel(my_car):
-    fuel_amount = int(input('How many units of fuel do you want to add to the car? '))
-    my_car.add_fuel(fuel_amount)
+    acceptable_amount = False
+    while not acceptable_amount:
+        try:
+            fuel_amount = int(input('How many units of fuel do you want to add to the car? '))
+            if fuel_amount <=0:
+                print(fuel_amount, ' must be >= 0')
+            else:
+                my_car.add_fuel(fuel_amount)
+        except ValueError:
+            print('Invalid input')
 
 
 def drive(my_car):
