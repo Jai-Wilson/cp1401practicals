@@ -7,11 +7,12 @@ class DynamicLabelsApp(App):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.names = ['jai', 'jordan', 'paul', 'paula']
+        self.names = ['jai', 'jordan', 'paul', 'paula', 'steve', 'helen']
 
     def build(self):
         self.title = 'Dynamic lists'
         self.root = Builder.load_file('dynamic_labels.kv')
+        self.create_labels()
         return self.root
 
     def create_labels(self):
