@@ -1,17 +1,17 @@
-from prac_06.car import Car
 from prac_08.taxi import Taxi
 from prac_08.silver_service_taxi import SilverServiceTaxi
-
 
 MENU = 'q)uit, c)hoose taxi, d)rive'
 
 
 def main():
+    """Main function deciphering which user input will result in which action"""
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     print("Let's Drive!")
     print(MENU)
     choice = get_selection()
     cumulative_bill = 0
+    current_taxi = None
 
     while choice != 'Q':
         if choice == 'C':
@@ -30,13 +30,12 @@ def main():
         print(MENU)
         choice = get_selection()
 
-
-
     print("Your final bill is {}".format(cumulative_bill))
     display_taxis(taxis)
 
 
 def get_selection():
+    """Take the user input and decides if it is a valid input or not"""
     acceptable_choices = ['Q', 'C', 'D']
     valid_choice = False
     while not valid_choice:
@@ -48,14 +47,11 @@ def get_selection():
             valid_choice = True
     return choice
 
+
 def display_taxis(taxis):
+    """Display the available taxis"""
     for i, taxi in enumerate(taxis):
         print('{} - {}'.format(i, taxi))
 
 
-
-
 main()
-
-
-
