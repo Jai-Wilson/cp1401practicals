@@ -48,15 +48,21 @@ def get_fixed_filename(filename):
         temp2 = new_name[:i]
         temp3 = new_name[i:]
         if new_name[i].isupper() and new_name[i-1].islower():
+            # if the current character is upper case and the previous case is lowercase
             if i-1 == -1:
+                # Pass if it is the first letter in the name
                 pass
             else:
                 new_name = new_name[:i] + '_' + new_name[i:]
+                # Add '_' in desired location
         elif new_name[i].islower() and new_name[i-1] == '_':
+            # if a lower case letter follows an underscore
             new_name = change_to_upper(new_name, i)
         elif i == 0 and new_name[i].islower:
+            # if the first letter is lowercase
             new_name = change_to_upper(new_name, i)
         elif new_name[i].isupper() and new_name[i-1].isupper():
+            # If an uppercase letter is followed by an uppercase letter
             if i-1 == -1:
                 pass
             else:
