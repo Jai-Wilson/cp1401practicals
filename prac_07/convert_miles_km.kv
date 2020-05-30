@@ -12,9 +12,13 @@ BoxLayout:
             size_hint_x: 0.25
             Button:
                 text: 'Up'
+                background_color: (1, 0, 0, 0.7)
+                color: (1, 0, 0, 1)
                 on_press: app.handle_change(1)
             Button:
                 text: 'down'
+                background_color: (0, 1, 0, 0.7)
+                color: (0, 1, 0, 1)
                 on_press: app.handle_change(-1)
 #    Button:
 #        text: 'Convert miles to km'
@@ -23,3 +27,4 @@ BoxLayout:
         id: output_distance
         font_size: 48
         text: ''
+        color: (1, 1, 0 , 1)
